@@ -37,8 +37,16 @@ interface IData {
 const TestComponent = () => {
     const myReducer: IInitialState = useSelector((state: IRootState) => state.MyReducer);
 
-    
+    if(myReducer.age < 18 ){
+        <ComponentA />
+    } else if (myReducer.age >= 18) {
+        <ComponentB />
+    } else {
+        <h1>There was an Error.</h1>
+    }
 }
+
+console.log("IDdata.age", IData.age)
 
 export default TestComponent;
 
